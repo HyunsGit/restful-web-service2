@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
@@ -13,8 +14,10 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 //@JsonIgnoreProperties(value={"password", "ssn"})
+@NoArgsConstructor
 @JsonFilter("UserInfo")
 public class User {
+    //User(){}
     private Integer id;
 
     @Size(min=4, message = "Name 4글자 이상 입력 해야함")
